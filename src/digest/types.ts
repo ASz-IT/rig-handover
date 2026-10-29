@@ -1,4 +1,4 @@
-// One row per job. `readNight` is the signature; the reader is a separate commit.
+// One row per job.
 
 export type DigestStatus = 'ok' | 'retry' | 'fail';
 
@@ -32,4 +32,4 @@ export type NightDigest = {
 /** `(runsDir, night) => NightDigest | null`. Null when `runs/<night>.jsonl` is missing. Rows are sorted by job. */
 export type ReadNight = (runsDir: string, night: string) => NightDigest | null;
 
-export declare const readNight: ReadNight;
+export { readNight } from './readNight.js';
